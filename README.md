@@ -1,9 +1,9 @@
 # ROS programming basics
 
-* (Debugging with QTcreator)[#debug-with-qtcreator]
+* [Debugging with QTcreator](#debug-with-qtcreator)
 
-Debug with QTCreator
---------------------
+# Debug with QTCreator
+
 Build a relevant package using the compile option `-DCMAKE_BUILD_TYPE=Debug`:
 
 ```
