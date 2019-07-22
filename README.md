@@ -50,3 +50,5 @@ Note that `valgrind` does not seem to be compatible with all C++ standard librar
 * The easiest way to run the profiler is to attach it to a running system. Under the "What" tab, click on "Launch application" and change it to "Attach to process". The "Process name" should just be the name of your node if you're using a node. I don't know about nodelets.
 * When your node is running, you can attach the profiler and click the big Run button.
 * The "Top-down tree" view seems to be a useful starting point for analyzing results.
+
+Link: [Intel getting started on Linux guide](https://software.intel.com/en-us/get-started-with-vtune-linux-os)
