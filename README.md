@@ -1,6 +1,28 @@
 # ROS programming basics
 
+* [Debugging with gdb](#debug-with-gdb-directly)
 * [Debugging with QTcreator](#debug-with-qtcreator)
+* [Profiling](#profiling)
+
+# Debug with gdb directly
+In a ROS launch file, in your node's XML, add a launch prefix:
+```xml
+<node name="test_name" pkg="pkg_name"
+    type = "node_name"
+    output="screen"
+    launch-prefix="xterm -e gdb -ex run --args"
+    respawn="true">
+```
+
+This will launch the node in a separate xterm window with the debugger.
+If the application closes unexpectedly, the `gdb` interface will be brought up.
+Here are basics for using `gdb`:
+
+* You can run `bt` to perform a backtrace of the crash. This will list the functions that crashed and its parents.
+* To enter a particular function, use `frame [n]` where `[n]` is the number associated with your function in the `bt` result
+* To evaluate an expression, use `print [exp]` or `p [exp]` to get the value of variables in the frame you are in
+* To get the list of local variables in a frame, use `info locals`
+* To get the arguments in a frame, use `info args`
 
 # Debug with QTCreator
 
