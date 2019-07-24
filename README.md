@@ -1,8 +1,14 @@
 # ROS programming basics
 
+* [Command line build options](#useful-command-line-build-options)
 * [Debugging with gdb](#debug-with-gdb-directly)
 * [Debugging with QTcreator](#debug-with-qtcreator)
 * [Profiling](#profiling)
+
+# Useful command line build options
+
+* To build a package without rebuilding its dependencies, use `catkin build --no-deps <package>`
+* To build a package using Debug settings, use `catkin build -DCMAKE_BUILD_TYPE=Debug <package>`
 
 # Debug with gdb directly
 In a ROS launch file, in your node's XML, add a launch prefix:
