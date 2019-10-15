@@ -71,7 +71,7 @@ Note that `valgrind` does not seem to be compatible with all C++ standard librar
 
 ## Intel vTune Amplifier
 
-* Install the Intel vTune Amplifier as root. The default install directory is `/opt/intel/vtune_amplifier`.
+* Install the Intel vTune Amplifier as root. The default install directory is `/opt/intel/vtune_amplifier` or `/home/$USER/intel/vtune_amplifier` if installing as non-root.
 * Source the file `/opt/intel/vtune_amplifier/amplxe-vars.sh`
 * Launch the GUI by calling `amplxe-gui` from a command line in the sourced workspace
 * Create a new project
