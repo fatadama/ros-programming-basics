@@ -32,10 +32,10 @@ Here are basics for using `gdb`:
 
 # Debug with QTCreator
 
-Build a relevant package using the compile option `-DCMAKE_BUILD_TYPE=Debug`:
+Build a relevant package using the compile option `--cmake-args -DCMAKE_BUILD_TYPE=Debug`:
 
 ```
-> catkin build -DCMAKE_BUILD_TYPE=Debug <package name>
+> catkin build --cmake-args -DCMAKE_BUILD_TYPE=Debug -- <package name>
 ```
 
 You can also change your cmake file to build the debugging configuration, but why would you want to do that?
