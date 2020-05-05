@@ -4,6 +4,7 @@
 * [Debugging with gdb](#debug-with-gdb-directly)
 * [Debugging with QTcreator](#debug-with-qtcreator)
 * [Profiling](#profiling)
+* [Git](#git)
 
 # Useful command line build options
 
@@ -80,3 +81,8 @@ Note that `valgrind` does not seem to be compatible with all C++ standard librar
 * The "Top-down tree" view seems to be a useful starting point for analyzing results.
 
 Link: [Intel getting started on Linux guide](https://software.intel.com/en-us/get-started-with-vtune-linux-os)
+
+# Git
+
+`git` is important.
+* To undo a specific commit only, use `git cherry-pick`
