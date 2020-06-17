@@ -107,3 +107,6 @@ Here is a very short description of how to perform code coverage analysis of a R
     * `lcov --directory path/to/gcda/files/ --capture --output-file app.info` where `path/to/gcda/files/` contains the gcda files for your package. This command generates a file app.info in your working directory
     * `genhtml app.info` generates an html file you can read
     * This process creates a table showing the fraction of lines and the fraction of functions your files called in all the libraries it used. Look for the libraries you're interested in and read the results.
+* **To get branch coverage results** - branch coverage is disabled by default in `lcov`. Run with the following options:
+    * `lcov --directory path/to/gcda/files/ --capture --output-file app.info --rc lcov_branch_coverage=1`
+    * `genhtml app.info --rc genhtml_branch_coverage=1`
