@@ -110,3 +110,32 @@ Here is a very short description of how to perform code coverage analysis of a R
 * **To get branch coverage results** - branch coverage is disabled by default in `lcov`. Run with the following options:
     * `lcov --directory path/to/gcda/files/ --capture --output-file app.info --rc lcov_branch_coverage=1`
     * `genhtml app.info --rc genhtml_branch_coverage=1`
+
+Here is a very simple shell script that runs in folder `coverage` in your workspace. Run ./coverage.sh <pkg_name> followed by 1 to do a clean build. This script cleans the build folder, runs any tests in your CMakeLists.txt, and processes the results. It suppresses output for libraries not in your workspace.
+```bash
+#!/bin/bash
+
+# package name
+PKG_NAME=$1
+# rebuild
+REBUILD=${2:-0}
+
+cd "../"
+# build and run tests
+remove existing
+if [ ! $REBUILD == 0 ]
+then 
+  rm -rf build
+  catkin build $PKG_NAME
+  catkin run_tests $PKG_NAME --no-deps
+fi
+cd "coverage"
+# if directory exists, continue
+if [ -d "../build/$PKG_NAME/CMakeFiles" ]
+then
+  # run lcov, ignoring non-source library calls
+  lcov --base-directory ../src/ --directory "../build/$PKG_NAME/CMakeFiles/" --capture --output-file "$PKG_NAME.info" -rc lcov_branch_coverage=1 --no-external
+  # gen html with branch coverage
+  genhtml "$PKG_NAME.info" --rc genhtml_branch_coverage=1 -o $PKG_NAME
+fi
+```
